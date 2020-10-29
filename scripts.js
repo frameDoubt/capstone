@@ -18,16 +18,14 @@ if (typeof(userDefaultString) == "string") {
     let castTableCell = document.createElement("TD");
     let castHeaderDistrict = document.createTextNode("DISTRICT");
     let castHeaderTribute = document.createTextNode("TRIBUTE");
-    
-    // create HMTL table header elements
     let tableRowNumber = 0;
     let tableRowId = "tableRow".concat(tableRowNumber);
     let tableCellClass = "cellsByRow".concat(tableRowNumber);
-    // starting with creating cell with node
+    // create HMTL table header elements
     document.getElementById("cohortTable").appendChild(castTableRow).setAttribute("id", tableRowId);
     document.getElementById(tableRowId).appendChild(castTableHeader).setAttribute("class", tableCellClass);
-    document.querySelector(".cellsByRow".concat(tableRowNumber)).appendChild(castHeaderDistrict);
-    let tableHeaderClone = document.querySelector(".cellsByRow".concat(tableRowNumber)).cloneNode(false);
+    document.getElementsByClassName(tableCellClass)[0].appendChild(castHeaderDistrict);
+    let tableHeaderClone = document.getElementsByClassName(tableCellClass)[0].cloneNode(false);
     console.log(tableHeaderClone);
     document.getElementById(tableRowId).appendChild(tableHeaderClone).setAttribute("class", tableCellClass);
     document.getElementsByClassName(tableCellClass)[1].appendChild(castHeaderTribute);
