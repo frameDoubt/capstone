@@ -1,0 +1,29 @@
+:root {
+    --secondaryBGColour: #AA4A30;
+    --mainBGColour: #D57149;
+    --secondaryTextColour: #E89F71;
+    --mainTextColour: #EDCFA9;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--mainBGColour);
+    border: .5rem solid var(--secondaryBGColour);
+}
+h1 {
+    align-self: center;
+    color: var(--mainTextColour);
+    margin-bottom: 0;
+}
+table {
+    align-self: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    width: 55%;
+    border: .5rem solid var(--secondaryBGColour);
+}
+th, td {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    color: var(--mainTextColour);
+}
