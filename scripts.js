@@ -18,16 +18,19 @@ if (typeof(userDefaultString) == "string") {
     let castTableCell = document.createElement("TD");
     let castHeaderDistrict = document.createTextNode("DISTRICT");
     let castHeaderTribute = document.createTextNode("TRIBUTE");
+    
     // create HMTL table header elements
     let tableRowNumber = 0;
+    let tableRowId = "tableRow".concat(tableRowNumber);
+    let tableCellClass = "cellsByRow".concat(tableRowNumber);
     // starting with creating cell with node
-    document.getElementById("cohortTable").appendChild(castTableRow).setAttribute("id", "tableRow".concat(tableRowNumber));
-    document.getElementById("tableRow".concat(tableRowNumber)).appendChild(castTableHeader).setAttribute("class", "cellsByRow".concat(tableRowNumber));
+    document.getElementById("cohortTable").appendChild(castTableRow).setAttribute("id", tableRowId);
+    document.getElementById(tableRowId).appendChild(castTableHeader).setAttribute("class", tableCellClass);
     document.querySelector(".cellsByRow".concat(tableRowNumber)).appendChild(castHeaderDistrict);
     let tableHeaderClone = document.querySelector(".cellsByRow".concat(tableRowNumber)).cloneNode(false);
     console.log(tableHeaderClone);
-    document.getElementById("tableRow".concat(tableRowNumber)).appendChild(tableHeaderClone).setAttribute("class", "cellsByRow".concat(tableRowNumber));
-    document.getElementsByClassName("cellsByRow".concat(tableRowNumber))[1].appendChild(castHeaderTribute);
+    document.getElementById(tableRowId).appendChild(tableHeaderClone).setAttribute("class", tableCellClass);
+    document.getElementsByClassName(tableCellClass)[1].appendChild(castHeaderTribute);
     
     // while (tableRowNumber+1 <= usersArray.length) {
     //     let castDistrictText = document.createTextNode("District ".concat(tableRowNumber+1));
