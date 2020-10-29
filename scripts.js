@@ -20,19 +20,21 @@ if (typeof(userDefaultString) == "string") {
     let castHeaderTribute = document.createTextNode("TRIBUTE");
     // create HMTL table header elements
     let tableRowNumber = 0;
+    // starting with creating cell with node
     document.getElementById("cohortTable").appendChild(castTableRow).setAttribute("id", "tableRow".concat(tableRowNumber));
-    
-    document.getElementById("tableRow0").appendChild(castTableHeader).setAttribute("id", "cell00");
-    document.getElementById("cell00").appendChild(castHeaderDistrict);
-    
+    document.getElementById("tableRow".concat(tableRowNumber)).appendChild(castTableHeader).setAttribute("class", "cellsByRow".concat(tableRowNumber));
+    document.querySelector(".cellsByRow".concat(tableRowNumber)).appendChild(castHeaderDistrict);
+    let tableHeaderClone = document.querySelector(".cellsByRow".concat(tableRowNumber)).cloneNode(false);
+    console.log(tableHeaderClone);
+    document.getElementById("tableRow".concat(tableRowNumber)).append(tableHeaderClone);
 
     // document.getElementById("tableRow0").castTableHeader.appendChild(castHeaderDistrict);
     
-    while (tableRowNumber+1 <= usersArray.length) {
-        let castDistrictText = document.createTextNode("District ".concat(tableRowNumber+1));
-        let castTributeText = document.createTextNode(usersArray[tableRowNumber]);
-        tableRowNumber++;
-    }
+    // while (tableRowNumber+1 <= usersArray.length) {
+    //     let castDistrictText = document.createTextNode("District ".concat(tableRowNumber+1));
+    //     let castTributeText = document.createTextNode(usersArray[tableRowNumber]);
+    //     tableRowNumber++;
+    // }
 } else {
     console.log(usersInput + " is not a string");
 }
