@@ -26,9 +26,8 @@ if (typeof(userDefaultString) == "string") {
     document.querySelector(".cellsByRow".concat(tableRowNumber)).appendChild(castHeaderDistrict);
     let tableHeaderClone = document.querySelector(".cellsByRow".concat(tableRowNumber)).cloneNode(false);
     console.log(tableHeaderClone);
-    document.getElementById("tableRow".concat(tableRowNumber)).append(tableHeaderClone);
-
-    // document.getElementById("tableRow0").castTableHeader.appendChild(castHeaderDistrict);
+    document.getElementById("tableRow".concat(tableRowNumber)).appendChild(tableHeaderClone).setAttribute("class", "cellsByRow".concat(tableRowNumber));
+    document.getElementsByClassName("cellsByRow".concat(tableRowNumber))[1].appendChild(castHeaderTribute);
     
     // while (tableRowNumber+1 <= usersArray.length) {
     //     let castDistrictText = document.createTextNode("District ".concat(tableRowNumber+1));
