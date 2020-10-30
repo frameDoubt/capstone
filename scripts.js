@@ -1,30 +1,23 @@
 // prompt user for input or allow to use program defaults
 // declares and initializes userDefaults
 
-// const usersInput = prompt("Would you like to make your own list?(empty field or cancel for no)" , "please have a space between names");
+const usersInput = prompt("Would you like to make your own list?(empty field or cancel for no)" , "space between each name");
 const userDefaultString = "Brandon Nick Jerrica Leonard Sharon Tennessee Nate Jake Shaina Jolene Jackie Robin Stephen";
 
 // checks if input was a string or not
 // if it's a string it turns the string into an array
 // if it isn't a string it runs defaults
 
-if (typeof(userDefaultString) == "string") {
+if (typeof(usersInput) == "string") {
     // creates const variable object with array stored inside
-    const usersArray = userDefaultString.split(" ");
+    const usersArray = usersInput.split(" ");
     
     // objects for creating HTML elements
     let tableRowNumber = 0;
-    let castTableRow = document.createElement("TR");
-    let castTableHeader = document.createElement("TH");
-    let castTableCell = document.createElement("TD");
-    let castHeaderDistrict = document.createTextNode("DISTRICT");
-    let castHeaderTribute = document.createTextNode("TRIBUTE");
     
     // create HMTL table header elements
     
     while (tableRowNumber <= usersArray.length){
-        let tableRowId = "tableRow".concat(tableRowNumber);
-        let tableCellClass = "cellsByRow".concat(tableRowNumber);
         let nodeVariableRow = "row".concat(tableRowNumber);
         if (tableRowNumber === 0) {
             nodeVariableRow = document.createElement("tr");
