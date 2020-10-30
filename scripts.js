@@ -11,30 +11,59 @@ const userDefaultString = "Brandon Nick Jerrica Leonard Sharon Tennessee Nate Ja
 if (typeof(userDefaultString) == "string") {
     // creates const variable object with array stored inside
     const usersArray = userDefaultString.split(" ");
-    console.log(usersArray.length);
+    
     // objects for creating HTML elements
+    let tableRowNumber = 0;
     let castTableRow = document.createElement("TR");
     let castTableHeader = document.createElement("TH");
     let castTableCell = document.createElement("TD");
     let castHeaderDistrict = document.createTextNode("DISTRICT");
     let castHeaderTribute = document.createTextNode("TRIBUTE");
-    let tableRowNumber = 0;
-    let tableRowId = "tableRow".concat(tableRowNumber);
-    let tableCellClass = "cellsByRow".concat(tableRowNumber);
-    // create HMTL table header elements
-    document.getElementById("cohortTable").appendChild(castTableRow).setAttribute("id", tableRowId);
-    document.getElementById(tableRowId).appendChild(castTableHeader).setAttribute("class", tableCellClass);
-    document.getElementsByClassName(tableCellClass)[0].appendChild(castHeaderDistrict);
-    let tableHeaderClone = document.getElementsByClassName(tableCellClass)[0].cloneNode(false);
-    console.log(tableHeaderClone);
-    document.getElementById(tableRowId).appendChild(tableHeaderClone).setAttribute("class", tableCellClass);
-    document.getElementsByClassName(tableCellClass)[1].appendChild(castHeaderTribute);
     
-    // while (tableRowNumber+1 <= usersArray.length) {
-    //     let castDistrictText = document.createTextNode("District ".concat(tableRowNumber+1));
-    //     let castTributeText = document.createTextNode(usersArray[tableRowNumber]);
-    //     tableRowNumber++;
-    // }
+    // create HMTL table header elements
+    
+    while (tableRowNumber <= usersArray.length){
+        let tableRowId = "tableRow".concat(tableRowNumber);
+        let tableCellClass = "cellsByRow".concat(tableRowNumber);
+        let nodeVariableRow = "row".concat(tableRowNumber);
+        if (tableRowNumber === 0) {
+            nodeVariableRow = document.createElement("tr");
+            document.getElementsByTagName("table")[0].append(nodeVariableRow);
+            let cellNumber = 0;
+            while (cellNumber <= 1) {
+                let nodeVariableNum = "cell".concat(cellNumber);
+                if (cellNumber === 0) {
+                    nodeVariableNum = document.createElement("th");
+                    nodeVariableNum.append("DISTRICT");
+                    document.getElementsByTagName("tr")[tableRowNumber].append(nodeVariableNum);
+                    cellNumber++;
+                }
+                nodeVariableNum = document.createElement("th");
+                nodeVariableNum.append("TRIBUTE");
+                document.getElementsByTagName("tr")[tableRowNumber].append(nodeVariableNum);
+                cellNumber++;
+            }
+            tableRowNumber++;   
+        }
+        nodeVariableRow = document.createElement("tr");
+        document.getElementsByTagName("table")[0].append(nodeVariableRow);
+        let cellNumber = 0;
+        while (cellNumber <= 1) {
+            let nodeVariableNum = "cell".concat(cellNumber);
+            if (cellNumber === 0) {
+                nodeVariableNum = document.createElement("td");
+                nodeVariableNum.append("District ".concat(tableRowNumber));
+                document.getElementsByTagName("tr")[tableRowNumber].append(nodeVariableNum);
+                cellNumber++;
+            }
+            nodeVariableNum = document.createElement("td");
+            nodeVariableNum.append(usersArray[tableRowNumber-1]);
+            document.getElementsByTagName("tr")[tableRowNumber].append(nodeVariableNum);
+            cellNumber++;
+        }
+        tableRowNumber++;
+    }
+
 } else {
     console.log(usersInput + " is not a string");
 }
