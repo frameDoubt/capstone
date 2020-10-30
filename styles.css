@@ -1,8 +1,9 @@
 :root {
-    --secondaryBGColour: #AA4A30;
-    --mainBGColour: #D57149;
-    --secondaryTextColour: #E89F71;
-    --mainTextColour: #EDCFA9;
+    --secondaryTextColour: #AA4A30;
+    --mainTextColour: #D57149;
+    --secondaryBGColour: #E89F71;
+    --mainBGColour: #EDCFA9;
+    --backUpFont: "Lucida Console";
 }
 body {
     display: flex;
@@ -14,6 +15,7 @@ h1 {
     align-self: center;
     color: var(--mainTextColour);
     margin-bottom: 0;
+    font-family: var(--backUpFont);
 }
 table {
     align-self: center;
@@ -21,9 +23,15 @@ table {
     margin-bottom: 5rem;
     width: 55%;
     border: .5rem solid var(--secondaryBGColour);
+    border-collapse: collapse;
+    font-family: var(--backUpFont);
+    font-size: 1.25rem;
 }
 th, td {
     padding-top: .5rem;
     padding-bottom: .5rem;
     color: var(--mainTextColour);
+    border: .5rem solid var(--secondaryBGColour);
+    text-align: center;
+    vertical-align: middle;
 }
