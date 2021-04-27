@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FWD - Capstone Project - Oct 2020</title>
+    <title>Rework of TableMaker</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
 </head>
 <body>
-    <h1>THE REAPING</h1>
-    <table id="cohortTable"></table>
-    <!-- <button>MAY THE ODDS BE EVER IN YOUR FAVOUR</button> -->
-    <script src="scripts.js"></script>
+    <main id="app">
+        <h1><a v-bind:href="myGitHubRepo">Table-Maker: The App</a></h1>
+        <p>{{ userPrompt }}</p>
+        <input type="text" @keyup.enter="userInput" v-model="userText">
+        <ul v-show="userList.length > 0">
+            <li v-for="name in userList" :key="name">
+                {{ name }}
+                <button>Edit</button>
+                <button>Delete</button>
+            </li>
+        </ul>
+        <button v-show="userList.length > 3" v-on:click="">Create Table</button>
+    </main>
+    <!-- <script src="https://unpkg.com/vue"></script> -->
 </body>
 </html>
