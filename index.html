@@ -14,8 +14,8 @@
         <p>{{ userPrompt }}</p>
         <input type="text" @keyup.enter="userInput" v-model="userText">
         <ul v-show="userList.length > 0">
-            <li v-for="name in userList" :key="name">
-                {{ name }}
+            <li v-for="names in userList" :key="names.name">
+                {{ names.name }}
                 <button>Edit</button>
                 <button>Delete</button>
             </li>
