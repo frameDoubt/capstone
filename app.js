@@ -19,6 +19,16 @@ const app = Vue.createApp({
           this.userList.push(cellValue);
           return this.userText = '';
         }
+      },
+      randomSelection() {
+        const mpdUserList = this.userList.map((item) => {
+          if(!item.drawn) {
+            return item.id;
+          }
+        });
+        console.log(this.userList[0].drawn);
+        this.userList[mpdUserList[0] - 1].drawn = true;
+        console.log(this.userList[0].drawn, this.userList[1].drawn);
       }
   }
 });

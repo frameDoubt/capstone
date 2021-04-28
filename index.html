@@ -32,7 +32,7 @@
                 <td>{{ names.status ? "Fallen" : "Living" }}</td>
             </tr>
         </table>
-        <button v-show="userList.length > 3" v-on:click="">Create Table</button>
+        <button v-show="userList.length > 1" v-on:click="randomSelection">Random</button>
     </main>
     <!-- <script src="https://unpkg.com/vue"></script> -->
 </body>

@@ -35,7 +35,7 @@ main > p {
 main > input {
     /* max-width: 20rem; */
     border: 2px solid var(--secondaryBGColour);
-    line-height: 1.5rem;
+    line-height: 26px;
     border-radius: 5px;
 }
 
