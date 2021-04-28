@@ -1,6 +1,7 @@
 const app = Vue.createApp({
   data() {
     return {
+      placeholderText: 'Enter name in this field',
       userPrompt: "Please enter names below.",
       userText: '',
       userList: [],
@@ -10,13 +11,14 @@ const app = Vue.createApp({
   methods: {
       userInput() {
         // this.userList.push(this.userText);
-        let cellValue = {};
+        if(this.userText.length > 0) {
+          let cellValue = {};
           cellValue.name = this.userText;
-          cellValue.id = this.userList + 1;
+          cellValue.id = this.userList.length + 1;
           cellValue.drawn = false;
           this.userList.push(cellValue);
-        console.log("the array of objects: " + cellValue);
-        return this.userText = '';
+          return this.userText = '';
+        }
       }
   }
 });

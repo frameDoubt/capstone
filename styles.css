@@ -8,9 +8,8 @@
 body {
     font-size: 16px;
     display: flex;
-    align-content: center;
     background-color: var(--mainBGColour);
-    border: .5rem solid var(--secondaryBGColour);
+    border: .3rem solid var(--secondaryBGColour);
     border-radius: 5px;
     padding: 0;
     margin: 0;
@@ -22,7 +21,7 @@ main {
     flex-wrap: wrap;
     font-family: var(--backUpFont);
     color: var(--mainTextColour);
-    padding: 2rem 4rem;
+    padding: 1rem 1rem;
 }
 
 h1 > a:visited {
@@ -30,28 +29,17 @@ h1 > a:visited {
 }
 
 main > p {
-    font-size: 1.1rem;
+    font-size: 17px;
 }
 
 main > input {
-    max-width: 20rem;
-    border: .2rem solid var(--secondaryBGColour);
+    /* max-width: 20rem; */
+    border: 2px solid var(--secondaryBGColour);
     line-height: 1.5rem;
     border-radius: 5px;
 }
 
-main > ul {
-    /* display: flex; */
-    list-style-type: none;
-    font-size: 1.1rem;
-}
-
-ul > li {
-    display: flex;
-}
-
 h1 {
-    align-self: center;
     color: var(--mainTextColour);
     margin-bottom: 0;
     font-family: var(--backUpFont);
