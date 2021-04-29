@@ -24,11 +24,12 @@ const app = Vue.createApp({
         }
       },
       randomSelection() {
-        const mpdUserList = this.userList.filter((item) => {
+        const filteredUserList = this.userList.filter((item) => {
           return item.status === false;
-        })
-        console.log(mpdUserList)
-        console.log(Math.floor(Math.random() * mpdUserList.length));
+        });
+        const selection = Math.floor(Math.random() * filteredUserList.length);
+        console.log(filteredUserList[selection].id - 1);
+        this.userList[filteredUserList[selection].id - 1].status = true;
       }
   }
 });
