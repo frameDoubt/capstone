@@ -13,13 +13,6 @@
         <h1><a v-bind:href="myGitHubRepo">Table-Maker: The App</a></h1>
         <p>{{ userPrompt }}</p>
         <input type="text" @keyup.enter="userInput" v-model="userText">
-        <!-- <ul v-show="userList.length > 0">
-            <li v-for="names in userList">
-                {{ names.name }}
-                <button>Edit</button>
-                <button>Delete</button>
-            </li>
-        </ul> -->
         <table v-show="userList.length > 0">
             <tr>
                 <th>District</th>
@@ -34,6 +27,5 @@
         </table>
         <button v-show="userList.length > 1" v-on:click="randomSelection">Random</button>
     </main>
-    <!-- <script src="https://unpkg.com/vue"></script> -->
 </body>
 </html>
