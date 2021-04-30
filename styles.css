@@ -62,3 +62,8 @@ th, td {
     text-align: center;
     vertical-align: middle;
 } */
+.tableRowSelected {
+    font-style: italic;
+    text-decoration: line-through;
+    color: red;
+}

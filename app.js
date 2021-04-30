@@ -10,6 +10,8 @@ const app = Vue.createApp({
       myGitHubRepo: "https://github.com/frameDoubt/table-maker"
     };
   },
+  computed: {
+  },
   methods: {
       userInput() {
         // this.userList.push(this.userText);

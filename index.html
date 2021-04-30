@@ -19,7 +19,7 @@
                 <th>Name</th>
                 <th>Status</th>
             </tr>
-            <tr v-for="(names, name, index) in userList" :key="names.id">
+            <tr v-for="(names, name, index) in userList" :key="names.id" v-bind:class="{ tableRowSelected: names.status }">
                 <td>{{ 'District ' + names.id }}</td>
                 <td>{{ names.name }}</td>
                 <td>{{ names.status ? "Fallen" : "Living" }}</td>
