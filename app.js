@@ -2,19 +2,17 @@ const app = Vue.createApp({
   data() {
     return {
       placeholderText: 'Enter name in this field',
-      userPrompt: "Please enter names below.",
+      userPrompt: "Please input names below. Press enter to submit name.",
       userText: '',
-      userList: [
-        { name: "Brandon", id: 1, status: true, }
-      ],
-      myGitHubRepo: "https://github.com/frameDoubt/table-maker"
+      userList: [],
+      myGitHubRepo: "https://github.com/frameDoubt/table-maker",
+      listComplete: false
     };
   },
   computed: {
   },
   methods: {
       userInput() {
-        // this.userList.push(this.userText);
         if(this.userText.length > 0) {
           let cellValue = {
             name: this.userText,
@@ -30,9 +28,32 @@ const app = Vue.createApp({
           return item.status === false;
         });
         const selection = Math.floor(Math.random() * filteredUserList.length);
-        console.log(filteredUserList[selection].id - 1);
-        this.userList[filteredUserList[selection].id - 1].status = true;
+        if(filteredUserList.length > 0) {
+          this.userList[filteredUserList[selection].id - 1].status = true;
+        };
+        if(filteredUserList.length === 2 && this.userList.length > 1) {
+          this.listComplete = true;
+        }
+      },
+      resetList() {
+        this.userList.forEach(element => {
+          element.status = false;
+        });
+        this.listComplete = false;
       }
   }
 });
 app.mount("#app");
+
+if ('serviceWorker' in navigator) {
+  navigator
+    .serviceWorker
+    .register(
+      // path to the service worker file
+      'sw.js'
+    )
+    // the registration is async and it returns a promise
+    .then(function (reg) {
+      console.log('Registration Successful');
+    });
+}

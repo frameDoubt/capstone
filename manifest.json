@@ -1,0 +1,18 @@
+{
+  "name": "Random Selection",
+  "short_name": "Selector",
+  "start_url": "index.html",
+  "display": "fullscreen",
+  "background_color": "#300E3A",
+  "theme_color": "#300E3A",
+  "description": "App for randomly selecting from a user controlled list.",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./src/Bowtie_30194.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

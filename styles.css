@@ -1,11 +1,12 @@
 :root {
-    --secondaryTextColour: #AA4A30;
-    --mainTextColour: #D57149;
-    --secondaryBGColour: #E89F71;
-    --mainBGColour: #EDCFA9;
     --backUpFont: "Lucida Console";
+    --mainBGColour: #300E3A;
+    --mainTextColour: #F4F478;
+    --secondaryBGColour: #9a10c5;
+    --secondaryTextColour: #ffffff;
 }
-body {
+
+.bodyStyle {
     font-size: 16px;
     display: flex;
     background-color: var(--mainBGColour);
@@ -15,55 +16,63 @@ body {
     margin: 0;
 }
 
-main {
+.mainStyle {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     font-family: var(--backUpFont);
-    color: var(--mainTextColour);
+    color: var(--secondaryTextColour);
     padding: 1rem 1rem;
+    align-items: center;
 }
 
-h1 > a:visited {
+.achorStyle {
     color: var(--secondaryTextColour);
 }
 
-main > p {
+.paragraphStyle {
     font-size: 17px;
 }
 
-main > input {
-    /* max-width: 20rem; */
+.inputStyle {
     border: 2px solid var(--secondaryBGColour);
+    width: 90%;
     line-height: 26px;
     border-radius: 5px;
 }
 
-h1 {
+.headerStyle {
     color: var(--mainTextColour);
     margin-bottom: 0;
     font-family: var(--backUpFont);
 }
-/* table {
-    align-self: center;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    width: 55%;
-    border: .5rem solid var(--secondaryBGColour);
-    border-collapse: collapse;
-    font-family: var(--backUpFont);
-    font-size: 1.25rem;
-}
-th, td {
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-    color: var(--mainTextColour);
-    border: .5rem solid var(--secondaryBGColour);
-    text-align: center;
-    vertical-align: middle;
-} */
+
 .tableRowSelected {
     font-style: italic;
     text-decoration: line-through;
-    color: red;
+    color: var(--mainTextColour);
+}
+
+.btn {
+    background-color: var(--mainBGColour);
+    color: var(--secondaryTextColour);
+    font-size: 17;
+    font-family: var(--backUpFont);
+    padding: 3px 0;
+    border-radius: 5px;
+    border: 2px solid var(--secondaryBGColour);
+    width: 75%;
+}
+
+.btn:active {
+    background-color: var(--secondaryBGColour);
+}
+
+.tableStyle, .tableHeader, .tableCell {
+    border: 2px solid var(--secondaryBGColour);
+}
+
+.tableStyle {
+    width: 95%;
+    border-radius: 5px;
 }

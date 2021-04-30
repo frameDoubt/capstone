@@ -3,29 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="App for randomly selecting from a user controlled list.">
+    <meta name="theme-color" content="#300E3A" />
     <title>Rework of TableMaker</title>
+    <link rel="apple-touch-icon" href="src/Bowtie_30194_256.png">
     <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
     <script src="https://unpkg.com/vue@next" defer></script>
     <script src="app.js" defer></script>
 </head>
-<body>
-    <main id="app">
-        <h1><a v-bind:href="myGitHubRepo">Table-Maker: The App</a></h1>
-        <p>{{ userPrompt }}</p>
-        <input type="text" @keyup.enter="userInput" v-model="userText">
-        <table v-show="userList.length > 0">
+<body class="bodyStyle">
+    <main id="app" class="mainStyle">
+        <h1 class="headerStyle"><a class="achorStyle" v-bind:href="myGitHubRepo">Table-Maker: The App</a></h1>
+        <p class="paragraphStyle">{{ userPrompt }}</p>
+        <form v-on:submit.prevent="" action="post">
+            <label for="nameField">Name:</label>
+            <input class="inputStyle" name="nameField" id="nameField"type="text" @keyup.enter="userInput" v-model="userText">
+        </form>
+        <br>
+        <table v-show="userList.length > 0" class="tableStyle">
             <tr>
-                <th>District</th>
-                <th>Name</th>
-                <th>Status</th>
+                <th scope="col" class="tableHeader">District</th>
+                <th scope="col" class="tableHeader">Name</th>
+                <th scope="col" class="tableHeader">Status</th>
             </tr>
             <tr v-for="(names, name, index) in userList" :key="names.id" v-bind:class="{ tableRowSelected: names.status }">
-                <td>{{ 'District ' + names.id }}</td>
-                <td>{{ names.name }}</td>
-                <td>{{ names.status ? "Fallen" : "Living" }}</td>
+                <td class="tableCell">{{ 'District ' + names.id }}</td>
+                <td class="tableCell">{{ names.name }}</td>
+                <td class="tableCell">{{ names.status ? "Fallen" : "Living" }}</td>
             </tr>
         </table>
-        <button v-show="userList.length > 1" v-on:click="randomSelection">Random</button>
+        <br>
+        <button class="btn" v-show="userList.length > 1" v-on:click="randomSelection">Random</button>
+        <br>
+        <button class="btn" v-show="listComplete" v-on:click="resetList">Reset</button>
     </main>
 </body>
 </html>
