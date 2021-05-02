@@ -56,7 +56,7 @@
 .btn {
     background-color: var(--mainBGColour);
     color: var(--secondaryTextColour);
-    font-size: 17;
+    font-size: 17px;
     font-family: var(--backUpFont);
     padding: 3px 0;
     border-radius: 5px;

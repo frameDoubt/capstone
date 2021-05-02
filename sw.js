@@ -1,11 +1,13 @@
-const CACHE_NAME = 'rando-selecto-cache-v1';
+const CACHE_NAME = 'rando-selecto-cache-v3';
 const urlsToCache = [
   '/',
-  'styles.css',
-  'app.js',
-  'index.html',
-  '/src',
-  'manifest.json'
+  './manifest.json',
+  './styles.css',
+  './app.js',
+  './index.html',
+  './ui-library/vue.global.prod.js',
+  // './ui-library/vue.global.js',
+  './src'
 ];
 
 self.addEventListener('install', function(event) {

@@ -1,3 +1,4 @@
+
 const app = Vue.createApp({
   data() {
     return {
@@ -50,7 +51,7 @@ if ('serviceWorker' in navigator) {
     .serviceWorker
     .register(
       // path to the service worker file
-      'sw.js'
+      './sw.js', {scope: './'}
     )
     // the registration is async and it returns a promise
     .then(function (reg) {
